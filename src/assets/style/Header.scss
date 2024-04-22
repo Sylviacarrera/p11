@@ -5,14 +5,16 @@
     align-items: center;
     padding: 1rem;
     margin-bottom: 2%;
-  
-  
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+
     .banner-nav {
       ul {
         list-style: none;
         display: flex;
         gap: 60px;
-  
+
         li a {
           text-decoration: none;
           color: #000;
@@ -22,7 +24,10 @@
           line-height: 34.22px;
           text-align: right;
         }
+
+        li .active {
+          text-decoration: underline;
+        }
       }
     }
   }
-  

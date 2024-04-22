@@ -1,0 +1,52 @@
+.tabs-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%; // Ajustez selon la largeur souhaitée
+  }
+  
+  .tab {
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 0.5rem; // Pour espacer les onglets
+    position: relative; // Pour le positionnement du chevron
+    font-size: 1rem;
+    border: none;
+    text-align: left;
+    width: 100%; // Assurez-vous que les onglets s’étendent sur toute la largeur du conteneur
+    cursor: pointer;
+  
+    &:before {
+      // Chevron
+      content: '';
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg); // Chevron vers le droit
+      border: solid white;
+      border-width: 0 4px 4px 0;
+      display: inline-block;
+      padding: 3px;
+    }
+  
+    &:hover {
+      background-color: darken(red, 10%);
+    }
+  
+    &.active {
+      &:before {
+        transform: translateY(-50%) rotate(-90deg); // Chevron vers le bas pour l'onglet actif
+      }
+    }
+  }
+  
+  .tab-content {
+    display: none;
+    &.active {
+      display: block;
+      padding: 1rem;
+      background-color: darken(red, 10%);
+      color: white;
+    }
+  }
+  

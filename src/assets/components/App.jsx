@@ -1,17 +1,18 @@
 import React from 'react';
-import Banner from './Banner';
+import { Routes, Route } from 'react-router-dom';
+import Homepage from '../pages/Homepage'; // Assurez-vous que le chemin d'accès est correct
+import Aboutpage from '../pages/Aboutpage'; // Assurez-vous que le chemin d'accès est correct
+import Tabs from './Tabs'
 import Footer from './Footer';
-import '../style/App.scss'; // Assurez-vous que le chemin vers votre fichier SCSS est correct
 
 const App = () => {
   return (
     <div className="app">
-      {/* Contenu principal de l'application */}
-      <Banner />
-      
-      {/* Le reste du contenu de votre application */}
-      
-      {/* Footer */}
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/apropos" element={<Aboutpage />} />
+        {/* Ajoutez d'autres routes au besoin */}
+      </Routes>
       <Footer />
     </div>
   );
