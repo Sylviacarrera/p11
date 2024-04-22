@@ -1,73 +1,45 @@
+// Styles pour .banner et .banner-slogan
 .banner {
     margin-top: 2%;
     margin-left: 5%;
     margin-right: 5%;
-    // En-tête avec logo et navigation
-    .banner-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      margin-bottom: 2%;
-  
-      .banner-nav {
-        ul {
-          list-style: none;
-          display: flex;
-          gap: 1rem;
-  
-          li a {
-            text-decoration: none;
-            color: #000; 
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-            line-height: 34.22px;
-            text-align: right;
 
-          }
-        }
-      }
-    }
   
     .banner-slogan {
-        // Pas besoin de positionner .banner-slogan lui-même relativement
-        // car il ne s'agit pas du parent direct de :before
-      
-        .slogan-background {
-          background-image: url('../img/imgbackground.png'); // Utilisez le chemin relatif correct ici.
-          border-radius: 25px; 
-          background-size: cover;
-          background-repeat: no-repeat;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 270px; // Ajustez selon les besoins pour l'image de fond.
-          position: relative; // Ajoutez cette ligne ici pour permettre le positionnement de :before
-          
-          &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: rgba(0, 0, 0, 0.6); // Superposition noire avec opacité
-            border-radius: 25px; // Conservez les bords arrondis sur la superposition
-          }
-      
-          h1 {
-            color: white; 
-            padding: 20px;
-            margin: 0;
-            z-index: 1;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 68.45px;
-            text-align: left;
-
-          }
+      .slogan-background {
+        background-image: url('../img/imgbackground.png');
+        border-radius: 25px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 270px;
+        position: relative;
+  
+        &:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 25px;
+        }
+  
+        h1 {
+          color: white;
+          padding: 20px;
+          margin: 0;
+          z-index: 1;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 48px;
+          font-weight: 700;
+          line-height: 68.45px;
+          text-align: left;
         }
       }
     }
+  }
+  
