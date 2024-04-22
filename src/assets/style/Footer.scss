@@ -1,0 +1,22 @@
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    
+    // Imbrication du logo et du texte dans .footer
+    .footer-logo {
+      width: 50px; // ajustez la taille de votre logo selon vos besoins
+      height: auto; // pour conserver les proportions du logo
+      margin-bottom: 1rem; // ajustez la marge entre le logo et le texte du footer
+    }
+  
+    // Ajout d'un style pour le paragraphe
+    p {
+      color: white; // cela rendra le texte blanc
+      margin: 0; // retire les marges par défaut du paragraphe si nécessaire
+    }
+  }
+  

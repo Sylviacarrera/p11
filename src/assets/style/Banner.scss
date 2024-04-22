@@ -1,0 +1,64 @@
+.banner {
+    // En-tête avec logo et navigation
+    .banner-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+  
+      .banner-nav {
+        ul {
+          list-style: none;
+          display: flex;
+          gap: 1rem;
+  
+          li a {
+            text-decoration: none;
+            color: #000; // Couleur des liens de navigation
+            // Autres styles pour les liens de navigation
+          }
+        }
+      }
+    }
+  
+    // Slogan
+    .banner-slogan {
+      background-color: rgba(0, 0, 0, 0.5); // Arrière-plan semi-transparent
+      text-align: center;
+      padding: 1rem;
+      margin-top: 1rem;
+  
+      .slogan-background {
+        background-image: url('../img/imgbackground.png'); // Chemin vers l'image de fond
+        border-radius: 25px; // Coins arrondis
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px; // Ajustez selon les besoins pour l'image de fond.
+        position: relative;
+        z-index: 1;
+  
+        &:before {
+          content: '';
+          position: absolute;
+          border-radius: 25px;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background: rgba(0, 0, 0, 0.5); // Noir avec opacité à 50%
+          z-index: 0;
+        }
+  
+        h1 {
+          color: white; // Couleur du texte
+          padding: 20px;
+          margin: 0; // Supprimer la marge par défaut si nécessaire
+        }
+      }
+    }
+  }
+  
