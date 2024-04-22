@@ -1,12 +1,13 @@
 import React from 'react';
 import '../style/Banner.scss'; // Assurez-vous que le chemin vers votre fichier SCSS est correct
+import Logo from '../img/logo.png'
 
 const Banner = () => {
   return (
     <div className="banner">
       {/* En-tête avec logo et navigation */}
       <header className="banner-header">
-        <img src="/img/LOGO.png" alt="Logo Kasa" className="banner-logo" />
+      <img src={Logo} alt="Logo Kasa" className="banner-logo" />
         <nav className="banner-nav">
           <ul>
             <li><a href="/">Accueil</a></li>
