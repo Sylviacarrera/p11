@@ -1,28 +1,38 @@
+@import 'Variables';
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, ul {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh; // Assurez-vous que le corps a au moins la hauteur de la fenêtre
+  display: flex;
+  flex-direction: column; // Organise le contenu en colonne
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: black;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  
+  .footer-logo {
+    width: 130px;
+    height: auto;
+    margin-bottom: 1rem;
   }
-  
-  body, ul {
-    margin: 0;
-  }
-  
-  .footer {
-    text-align: center;
-    padding:20px;
-    background-color: black;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    
-    .footer-logo {
-      width: 130px;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-  
-    p {
+
+  p {
     color: white;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -30,6 +40,11 @@
     font-weight: 500;
     line-height: 34.22px;
     text-align: center;
-    }
   }
-  
+}
+
+// Ajoutez un padding-bottom au contenu principal pour ne pas être caché par le footer
+.content {
+  flex: 1; // Permet au contenu de grandir et d'utiliser l'espace disponible
+  padding-bottom: 60px; // Ajustez en fonction de la hauteur de votre footer
+}

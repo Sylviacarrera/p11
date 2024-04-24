@@ -1,0 +1,24 @@
+// Couleurs
+$color-white: #fff;
+$color-black: #000;
+$color-background: #F6F6F6;
+$color-footer-background: black;
+$color-text-white: white;
+$color-overlay: rgba(0, 0, 0, 0.6);
+$color-card-shadow: rgba(0, 0, 0, 0.1);
+$color-hover-shadow: rgba(0, 0, 0, 0.15);
+$color-footer-text: white;
+$color-tab-active: red; // Exemple pour la couleur des tabs actives
+$color-red : #FF6060;
+
+$color-tab-hover: darken($color-tab-active, 10%);
+
+// Polices
+$font-family-main: 'Montserrat', sans-serif;
+
+// Ombres
+$shadow-card: 0 4px 8px $color-card-shadow;
+$shadow-hover: 0 6px 12px $color-hover-shadow;
+
+// Autres
+$border-radius: 25px;

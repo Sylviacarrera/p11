@@ -1,14 +1,20 @@
 import React from 'react';
-import Header from '../components/Header';  // Assurez-vous que le chemin vers le Header est correct.
+import Header from '../components/Header';  
+import Banner from '../components/Banner';
+import Footer from '../components/Footer';
 import Tabs from '../components/Tabs';
-import Footer from '../components/Footer';  // Assurez-vous que le chemin vers le Footer est correct.
+
+import aboutBackgroundImage from '../img/imgbackground2.png'; // Importez votre image de fond
 
 const AboutPage = () => {
   return (
     <div>
-      <Header />  
-      <div></div>
-      <Tabs />
+      <Header />
+      <Banner 
+        sloganText=""
+        backgroundImage={aboutBackgroundImage} 
+      />
+      <Tabs/>
       <Footer />
     </div>
   );

@@ -1,0 +1,67 @@
+@import 'Variables';
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 5% 3% 5% 3%;
+    padding: 3%;
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    
+    .card {
+      border-radius: 8px; // Bords arrondis pour les cartes
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ombre pour la profondeur
+      margin: 10px; // Espace autour des cartes pour éviter qu'elles se touchent
+      width: calc(33.333% - 20px); // Soustraction due au margin pour 3 cartes par ligne
+      overflow: hidden; // Pour s'assurer que tout le contenu reste à l'intérieur des bords arrondis
+      cursor: pointer; // Indique que la carte est cliquable
+      transition: transform 0.3s ease, box-shadow 0.3s ease; // Transition pour l'animation au survol
+      position: relative;
+      
+      &:hover {
+        transform: translateY(-5px); // Déplacement léger vers le haut lors du survol
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); // Ombre plus prononcée au survol
+      }
+  
+      .card-image {
+        position: relative;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: $color-red;
+          opacity: 0.9; // Ajustez l'opacité selon vos besoins
+          z-index: 0; // S'assure que l'effet de couleur est au-dessus de l'image de fond mais en dessous du texte
+        }
+      }
+  
+      .card-title {
+        color: white; // Couleur du texte
+        position: absolute;
+        bottom: 10px; // Ajustez en fonction de l'espace souhaité du bas de l'image
+        left: 10px; // Ajustez en fonction de l'espace souhaité du côté gauche
+        padding: 0; // Retirez le padding si vous ne voulez pas de l'espace autour du texte
+        margin: 0; // Assurez-vous qu'il n'y a pas de marge par défaut
+        color: $color-text-white; // Utilisez la variable de couleur définie dans vos variables SCSS
+        background-color: transparent; // Retirez l'arrière-plan ou ajustez si nécessaire
+        font-family: $font-family-main; // Utilisez la variable de police définie dans vos variables SCSS
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 25.67px;
+        text-align: left;
+        width: auto; // Permettez au titre de prendre la largeur du contenu
+        overflow: visible; // Assurez-vous que le texte ne soit pas coupé
+        z-index: 1;
+      }
+    }
+  }
+  
