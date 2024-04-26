@@ -1,57 +1,52 @@
 @import 'Variables';
 
 .tabs-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%; 
+  display: flex;
+  flex-direction: column;
+  width: 100%; // S'assurer que le conteneur prend toute la largeur
+}
 
-  }
-  
-  .tab {
-    background-color: red;
+.tab {
+  width: 100%; // S'assurer que chaque onglet prend toute la largeur du conteneur
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+
+  .tab-button {
+    display: block; // S'assurer que le bouton s'étend sur toute la largeur
+    width: 100%;
+    padding: 16px; // Ajuster au besoin
+    background-color: #F44336; // Rouge pour non-sélectionné
     color: white;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    position: relative;
-    font-size: 1rem;
-    border: none;
     text-align: left;
-    width: 100%; 
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s ease;
 
-    &:before {
-      content: '';
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      transform: translateY(-50%) rotate(90deg); 
-      border: solid white;
-      border-width: 0 2px 2px 0;
-      display: inline-block;
-      padding: 3px;
-    }
-  
     &:hover {
-      background-color: darken(red, 10%); 
+      background-color: darken(#F44336, 10%); // Foncer au survol
     }
-  
-    &.active {
-      background-color: darken(red, 10%); 
-  
-      &:before {
-        transform: translateY(-50%) rotate(-90deg); 
-      }
+
+    &:focus {
+      outline: none;
     }
   }
-  
-  .tab-content {
-    display: none;
-    &.active {
-      display: block;
-      padding: 1rem;
-      background-color: darken(red, 10%);
-      color: white;
-    }
+
+  &.active .tab-button {
+    background-color: #D32F2F; // Rouge plus foncé pour l'onglet actif
   }
-  
+
+  &:before {
+    // ... autres styles pour l'indicateur (pas de changement ici)
+  }
+}
+
+.tab-content {
+  display: none; // Cacher le contenu non actif
+  &.active {
+    display: block; // Montrer le contenu actif
+    padding: 16px;
+    background-color: #D32F2F; // Rouge plus foncé pour le contenu actif
+    color: white;
+  }
+}

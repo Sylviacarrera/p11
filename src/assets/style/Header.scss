@@ -9,26 +9,26 @@
     margin-top: 2%;
     margin-left: 5%;
     margin-right: 5%;
+}
 
-    .banner-nav {
-      ul {
+.banner-nav {
+    ul {
         list-style: none;
         display: flex;
         gap: 60px;
 
         li a {
-          text-decoration: none;
-          color: #000;
-          font-family: 'Montserrat', sans-serif;
-          font-size: 24px;
-          font-weight: 500;
-          line-height: 34.22px;
-          text-align: right;
+            text-decoration: none;
+            color: $color-black; 
+            font-family: $font-family-main;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 34.22px;
+            text-align: right;
         }
 
         li .active {
-          text-decoration: underline;
+            text-decoration: underline;
         }
-      }
     }
-  }
+}

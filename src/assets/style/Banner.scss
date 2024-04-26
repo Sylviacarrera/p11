@@ -1,44 +1,45 @@
+@import 'Variables';
+
 .banner {
     .banner-slogan {
-      background-size: cover; // Assure que l'image de fond couvre toute la zone
-      background-repeat: no-repeat; // Empêche l'image de fond de se répéter
-      margin-top: 2%;
-      margin-left: 5%;
-      margin-right: 5%;
-      position: relative; // Position relative pour le positionnement absolu des éléments enfants
-      border-radius: 25px;
-  
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.6);
-        border-radius: 25px;
-        z-index: 0; // S'assure que l'ombre est sous le contenu de la div
-      }
-  
-      .slogan-background {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 270px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
         position: relative;
-  
-        h1 {
-          color: white;
-          padding: 20px;
-          margin: 0;
-          z-index: 1; // S'assure que le texte est au-dessus de l'ombre
-          font-family: 'Montserrat', sans-serif;
-          font-size: 48px;
-          font-weight: 700;
-          line-height: 68.45px;
-          text-align: left;
+        border-radius: $border-radius; /* Utilisation de la variable pour le rayon de la bordure */
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $color-overlay; /* Utilisation de la variable pour la couleur d'arrière-plan avec l'opacité */
+            border-radius: $border-radius; /* Utilisation de la variable pour le rayon de la bordure */
+            z-index: 0;
         }
-      }
+
+        .slogan-background {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 270px;
+            position: relative;
+
+            h1 {
+                color: $color-text-white; /* Utilisation de la variable pour la couleur du texte */
+                padding: 20px;
+                margin: 0;
+                z-index: 1;
+                font-family: $font-family-main; /* Utilisation de la variable pour la police */
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 68.45px;
+                text-align: left;
+            }
+        }
     }
-  }
-  
+}

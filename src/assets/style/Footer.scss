@@ -11,40 +11,39 @@ body, ul {
 }
 
 body {
-  min-height: 100vh; // Assurez-vous que le corps a au moins la hauteur de la fenêtre
+  min-height: 100vh;
   display: flex;
-  flex-direction: column; // Organise le contenu en colonne
+  flex-direction: column;
 }
 
 .footer {
   text-align: center;
   padding: 20px;
-  background-color: black;
-  position: fixed; 
+  background-color: $color-footer-background; 
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 9999;
-  
-  .footer-logo {
-    width: 130px;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    color: white;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 34.22px;
-    text-align: center;
-  }
 }
 
-// Ajoutez un padding-bottom au contenu principal pour ne pas être caché par le footer
+.footer-logo {
+  width: 130px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.footer p {
+  color: $color-footer-text;
+  margin: 0;
+  font-family: $font-family-main;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34.22px;
+  text-align: center;
+}
+
 .content {
-  flex: 1; // Permet au contenu de grandir et d'utiliser l'espace disponible
-  padding-bottom: 60px; // Ajustez en fonction de la hauteur de votre footer
+  flex: 1;
+  padding-bottom: 60px;
 }
