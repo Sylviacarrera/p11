@@ -3,11 +3,12 @@ import '../style/Tabs.scss';
 
 // Le composant Tab prendra un titre et un contenu (children) et la fonction pour gérer le changement d'onglet
 const Tab = ({ title, children, onSelect, isSelected }) => (
-  <div>
-    <button onClick={onSelect} style={{ backgroundColor: isSelected ? 'red' : 'grey' }}>
+  <div className="tab">
+    <button onClick={onSelect} className={`tab-button ${isSelected ? 'active' : ''}`}>
       {title}
+      <span className="chevron">{isSelected ? '▼' : '▶'}</span> {/* Chevron qui change */}
     </button>
-    {isSelected && <div>{children}</div>}
+    {isSelected && <div className="tab-content">{children}</div>}
   </div>
 );
 

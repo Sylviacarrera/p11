@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Homepage from '../pages/Homepage'; // Assurez-vous que le chemin d'accès est correct
 import Aboutpage from '../pages/Aboutpage'; // Assurez-vous que le chemin d'accès est correct
-import Tabs from './Tabs'
 import Footer from './Footer';
 
 const App = () => {
