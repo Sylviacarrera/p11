@@ -6,11 +6,12 @@ const Tab = ({ title, children, onSelect, isSelected }) => (
   <div className="tab">
     <button onClick={onSelect} className={`tab-button ${isSelected ? 'active' : ''}`}>
       {title}
-      <span className="chevron">{isSelected ? '▼' : '▶'}</span> {/* Chevron qui change */}
+      <i className={`fa ${isSelected ? 'fa-chevron-down' : 'fa-chevron-right'} chevron`}></i>
     </button>
     {isSelected && <div className="tab-content">{children}</div>}
   </div>
 );
+
 
 // Le composant Tabs sera utilisé pour encapsuler les onglets et gérer lequel est actif
 const Tabs = ({ children }) => {

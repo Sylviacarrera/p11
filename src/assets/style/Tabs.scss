@@ -1,4 +1,4 @@
-@import 'Variables';
+@import 'Variables'; // Importation des variables SCSS
 
 .tabs-container {
   display: flex;
@@ -6,46 +6,62 @@
 }
 
 .tab {
-  width: 100%; // S'assurer que chaque onglet prend toute la largeur du conteneur
   cursor: pointer;
   border: none;
-  transition: background-color 0.3s ease;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 2%;
+
 
   .tab-button {
-    display: block; // S'assurer que le bouton s'étend sur toute la largeur
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 16px; // Ajuster au besoin
-    background-color: #F44336; // Rouge pour non-sélectionné
+    padding: 25px;
+    background-color: $color-red; // Utilisation de la variable pour la couleur de fond
     color: white;
     text-align: left;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 10px;
+    font-family: $font-family-main;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.67px;
 
     &:hover {
-      background-color: darken(#F44336, 10%); // Foncer au survol
+      background-color:$color-red;
     }
 
     &:focus {
       outline: none;
     }
+
+    .chevron {
+      // Assurez-vous que les chevrons sont visibles et correctement alignés
+      color: white;
+      transition: transform 0.3s ease;
+      font-size: 16px; // Ajustez selon vos besoins
+    }
   }
 
   &.active .tab-button {
-    background-color: #D32F2F; // Rouge plus foncé pour l'onglet actif
-  }
+    background-color:$color-red;
 
-  &:before {
-    // ... autres styles pour l'indicateur (pas de changement ici)
+    .chevron {
+      transform: rotate(-180deg);
+    }
   }
 }
 
 .tab-content {
-  display: none; // Cacher le contenu non actif
+  display: none;
   &.active {
-    display: block; // Montrer le contenu actif
+    display: block;
     padding: 16px;
-    background-color: #D32F2F; // Rouge plus foncé pour le contenu actif
+    background-color: darken($color-red, 10%);
     color: white;
   }
 }
