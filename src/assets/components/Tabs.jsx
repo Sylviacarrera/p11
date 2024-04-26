@@ -1,28 +1,52 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import '../style/Tabs.scss';
 
-// Le composant Tab prendra un titre et un contenu (children) et la fonction pour gérer le changement d'onglet
-const Tab = ({ title, children, onSelect, isSelected }) => (
-  <div className="tab">
-    <button onClick={onSelect} className={`tab-button ${isSelected ? 'active' : ''}`}>
-      {title}
-      <i className={`fa ${isSelected ? 'fa-chevron-down' : 'fa-chevron-right'} chevron`}></i>
-    </button>
-    {isSelected && <div className="tab-content">{children}</div>}
-  </div>
+// Composant du menu déroulant
+const DropdownMenu = ({ options }) => (
+  <select>
+    {options.map((option, index) => (
+      <option key={index} value={option.value}>{option.label}</option>
+    ))}
+  </select>
 );
 
+// Le composant Tab prendra un titre, un contenu (children) et les options du menu déroulant
+const Tab = ({ title, children, isSelected, onClick, dropdownOptions }) => (
+  <div className="tab">
+    <button onClick={onClick} className={`tab-button ${isSelected ? 'active' : ''}`}>
+      {title}
+      <FontAwesomeIcon icon={isSelected ? faChevronUp : faChevronDown} className="chevron" />
+    </button>
+    {isSelected && (
+      <div className="tab-content">
+        {children}
+        {/* Afficher le menu déroulant si des options sont fournies */}
+        {dropdownOptions && <DropdownMenu options={dropdownOptions} />}
+      </div>
+    )}
+  </div>
+);
 
 // Le composant Tabs sera utilisé pour encapsuler les onglets et gérer lequel est actif
 const Tabs = ({ children }) => {
   const [selectedTab, setSelectedTab] = useState(0);
+  const [tabStates, setTabStates] = useState(new Array(React.Children.count(children)).fill(false));
+
+  const handleTabClick = (index) => {
+    const newTabStates = [...tabStates];
+    newTabStates[index] = !newTabStates[index];
+    setTabStates(newTabStates);
+    setSelectedTab(index);
+  };
 
   return (
     <div>
       {React.Children.map(children, (child, index) =>
         React.cloneElement(child, {
-          onSelect: () => setSelectedTab(index),
-          isSelected: index === selectedTab,
+          onClick: () => handleTabClick(index),
+          isSelected: index === selectedTab && tabStates[index],
         }),
       )}
     </div>
@@ -32,10 +56,18 @@ const Tabs = ({ children }) => {
 // Utilisation du composant Tabs avec Tab
 const App = () => (
   <Tabs>
-    <Tab title="Fiabilité">Contenu de Fiabilité</Tab>
-    <Tab title="Respect">Contenu de Respect</Tab>
-    <Tab title="Service">Contenu de Service</Tab>
-    <Tab title="Sécurité">Contenu de Sécurité</Tab>
+    <Tab title="Fiabilité" dropdownOptions={[{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }]}>
+      Contenu de Fiabilité
+    </Tab>
+    <Tab title="Respect" dropdownOptions={[{ label: 'Option 3', value: 'option3' }, { label: 'Option 4', value: 'option4' }]}>
+      Contenu de Respect
+    </Tab>
+    <Tab title="Service" dropdownOptions={[{ label: 'Option 5', value: 'option5' }, { label: 'Option 6', value: 'option6' }]}>
+      Contenu de Service
+    </Tab>
+    <Tab title="Sécurité" dropdownOptions={[{ label: 'Option 7', value: 'option7' }, { label: 'Option 8', value: 'option8' }]}>
+      Contenu de Sécurité
+    </Tab>
   </Tabs>
 );
 
