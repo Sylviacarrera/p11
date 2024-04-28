@@ -1,7 +1,5 @@
 import React from 'react';
-import Header from '../components/Header';  
 import Banner from '../components/Banner';
-import Footer from '../components/Footer';
 import Tabs from '../components/Tabs';
 
 import aboutBackgroundImage from '../img/imgbackground2.png'; // Importez votre image de fond
@@ -9,13 +7,11 @@ import aboutBackgroundImage from '../img/imgbackground2.png'; // Importez votre 
 const AboutPage = () => {
   return (
     <div>
-      <Header />
-      <Banner 
+      <Banner
         sloganText=""
-        backgroundImage={aboutBackgroundImage} 
+        backgroundImage={aboutBackgroundImage}
       />
-      <Tabs/>
-      <Footer />
+      <Tabs />
     </div>
   );
 };

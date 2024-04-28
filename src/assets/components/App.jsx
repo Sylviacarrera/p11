@@ -1,19 +1,23 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Homepage from '../pages/Homepage'; // Assurez-vous que le chemin d'accès est correct
-import Aboutpage from '../pages/Aboutpage'; // Assurez-vous que le chemin d'accès est correct
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from '../pages/Homepage';
+import Aboutpage from '../pages/Aboutpage';
+import NotFoundPage from '../pages/Notfoundpage'; // Assurez-vous que le chemin d'accès est correct
 import Footer from './Footer';
+import Header from './Header';
 
 const App = () => {
   return (
-    <div className="app">
+    <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/apropos" element={<Aboutpage />} />
-        {/* Ajoutez d'autres routes au besoin */}
+        {/* Route générique pour la page 404 */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 };
 

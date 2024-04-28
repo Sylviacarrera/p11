@@ -30,18 +30,6 @@
         background-size: cover;
         background-position: center;
         
-        &::after {
-          content: '';
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: $color-red;
-          opacity: 0.9; // Ajustez l'opacité selon vos besoins
-          z-index: 0; // S'assure que l'effet de couleur est au-dessus de l'image de fond mais en dessous du texte
-        }
       }
   
       .card-title {
@@ -61,6 +49,7 @@
         width: auto; // Permettez au titre de prendre la largeur du contenu
         overflow: visible; // Assurez-vous que le texte ne soit pas coupé
         z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
       }
     }
   }
