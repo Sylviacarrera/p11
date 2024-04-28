@@ -1,0 +1,32 @@
+@import 'Variables'; // Importation des variables SCSS
+
+h1 {
+  color: $color-red; /* Utilisation de la variable pour la couleur */
+  font-family: $font-family-main; /* Utilisation de la variable pour la police */
+  font-size: 288px;
+  font-weight: 700;
+  line-height: 410.69px;
+  text-align: center;
+}
+
+p {
+  font-family: $font-family-main; /* Utilisation de la variable pour la police */
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 51.34px;
+  text-align: center;
+  color: $color-red; /* Utilisation de la variable pour la couleur */
+  padding: 20px;
+}
+
+.link a {
+  font-family: $font-family-main; /* Utilisation de la variable pour la police */
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.67px;
+  text-align: left;
+  color: $color-black; /* Utilisation de la variable pour la couleur de fond */
+  padding: 10px 20px; /* Ajustez selon vos besoins */
+  display: inline-block; /* Assurer que le lien se comporte comme un bloc */
+
+}

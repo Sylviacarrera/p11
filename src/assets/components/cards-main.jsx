@@ -1,12 +1,19 @@
 import React from 'react';
-import  data  from '../data/logements.json'; // Assurez-vous d'importer correctement vos données
-import '../style/Cards.scss';
+import { useNavigate } from 'react-router-dom';
+import data from '../data/logements.json';
+import '../style/Cards.scss'
 
 const CardsMain = () => {
+  const navigate = useNavigate();
+
+  const handleCardClick = (id) => {
+    navigate(`/logements/${id}`);
+  };
+
   return (
     <div className="cards-container">
       {data.map((item) => (
-        <div key={item.id} className="card" onClick={() => console.log('Card clicked!', item.id)}>
+        <div key={item.id} className="card" onClick={() => handleCardClick(item.id)}>
           <div className="card-image" style={{ backgroundImage: `url(${item.cover})` }}>
             <div className="card-title">{item.title}</div>
           </div>

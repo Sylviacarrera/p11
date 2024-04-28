@@ -1,59 +1,55 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import '../style/Tabs.scss';
+import '../style/Dropdown.scss';
 
-// Composant du menu déroulant
 const DropdownMenu = ({ options }) => (
-  <select>
+  <div className="dropdown-menu">
     {options.map((option, index) => (
-      <option key={index} value={option.value}>{option.label}</option>
+      <div key={index} className="dropdown-item">
+        {option.label}
+      </div>
     ))}
-  </select>
+  </div>
 );
 
-// Le composant Tab prendra un titre, un contenu (children) et les options du menu déroulant
-const Tab = ({ title, children, isSelected, onClick, dropdownOptions }) => (
+const Tab = ({ title, children, isSelected, toggleTab, dropdownOptions }) => (
   <div className="tab">
-    <button onClick={onClick} className={`tab-button ${isSelected ? 'active' : ''}`}>
+    <button onClick={toggleTab} className={`tab-button ${isSelected ? 'active' : ''}`}>
       {title}
       <FontAwesomeIcon icon={isSelected ? faChevronUp : faChevronDown} className="chevron" />
     </button>
     {isSelected && (
       <div className="tab-content">
         {children}
-        {/* Afficher le menu déroulant si des options sont fournies */}
         {dropdownOptions && <DropdownMenu options={dropdownOptions} />}
       </div>
     )}
   </div>
 );
 
-// Le composant Tabs sera utilisé pour encapsuler les onglets et gérer lequel est actif
 const Tabs = ({ children }) => {
-  const [selectedTab, setSelectedTab] = useState(0);
-  const [tabStates, setTabStates] = useState(new Array(React.Children.count(children)).fill(false));
+  const [openTabs, setOpenTabs] = useState({});
 
-  const handleTabClick = (index) => {
-    const newTabStates = [...tabStates];
-    newTabStates[index] = !newTabStates[index];
-    setTabStates(newTabStates);
-    setSelectedTab(index);
+  const toggleTab = (index) => {
+    setOpenTabs(prevState => ({
+      ...prevState,
+      [index]: !prevState[index]
+    }));
   };
 
   return (
-    <div>
+    <div className="tabs-container">
       {React.Children.map(children, (child, index) =>
         React.cloneElement(child, {
-          onClick: () => handleTabClick(index),
-          isSelected: index === selectedTab && tabStates[index],
-        }),
+          toggleTab: () => toggleTab(index),
+          isSelected: !!openTabs[index]
+        })
       )}
     </div>
   );
 };
 
-// Utilisation du composant Tabs avec Tab
 const App = () => (
   <Tabs>
     <Tab title="Fiabilité" dropdownOptions={[{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }]}>
