@@ -19,8 +19,7 @@ const Logements = () => {
         host={logement.host}
         rating={logement.rating}
       />
-      {/* D'autres détails du logement peuvent être ajoutés ici */}
-      {/* Footer, etc., peuvent également être ajoutés ici si nécessaire */}
+    
     </div>
   );
 };
