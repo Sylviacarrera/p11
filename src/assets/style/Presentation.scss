@@ -1,0 +1,77 @@
+// LogementDetails.scss
+@import 'Variables';
+
+.logement-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+.left-column, .right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.logement-title {
+  font-size: 24px;
+  color: $color-red;
+  margin-bottom: 0.5em;
+}
+
+.logement-location {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.logement-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.logement-host {
+  display: flex;
+  align-items: center;
+}
+
+.host-name {
+  margin-right: 10px;
+}
+
+.host-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.logement-rating {
+  display: flex;
+  color: #ff5a5f;
+}
+
+.logement-rating .empty {
+  color: #ccc;
+}
+
+@media (min-width: 768px) {
+  .logement-details {
+    align-items: center;
+  }
+
+  .left-column {
+    flex-grow: 2;
+  }
+
+  .right-column {
+    flex-grow: 1;
+    align-items: flex-end;
+  }
+}

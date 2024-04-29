@@ -1,6 +1,6 @@
 @import 'Variables'; // Importation des variables SCSS
 
-h1 {
+.not-found-title {
   color: $color-red; /* Utilisation de la variable pour la couleur */
   font-family: $font-family-main; /* Utilisation de la variable pour la police */
   font-size: 288px;
