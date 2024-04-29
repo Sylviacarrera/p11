@@ -15,17 +15,21 @@ const Logements = () => {
   )).join(' ');
 
   return (
-    <div>
+    <div className="logement-wrapper"> {/* Conteneur avec marges */}
       <Carousel pictures={logement.pictures} />
-      <h1>{logement.title}</h1>
-      <div>{logement.location}</div>
-      <div>{logement.tags.map((tag, index) => <span key={index}>{tag}</span>)}</div>
-      <div>
-        <span>{logement.host.name}</span>
-        <img src={logement.host.picture} alt={`Hôte : ${logement.host.name}`} />
+      <div className="logement-content"> {/* Nouvelle div pour le contenu */}
+        <h1 className="logement-title">{logement.title}</h1>
+        <div className="logement-location">{logement.location}</div>
+        <div className="logement-tags">
+          {logement.tags.map((tag, index) => <span key={index} className="tag">{tag}</span>)}
+        </div>
+        <div className="logement-host">
+          <span>{logement.host.name}</span>
+          <img src={logement.host.picture} alt={`Hôte : ${logement.host.name}`} />
+        </div>
+        <div className="logement-rating">{ratingStars}</div>
+        {/* D'autres détails du logement peuvent être ajoutés ici */}
       </div>
-      <div>{ratingStars}</div>
-      {/* D'autres détails du logement peuvent être ajoutés ici */}
     </div>
   );
 };

@@ -1,0 +1,55 @@
+@import 'Variables'; // Assurez-vous que ce fichier contient toutes vos variables de couleurs et polices
+
+.logement-content {
+  width: 100%;
+  display: flex; // Utilisation de Flexbox pour organiser les éléments
+  justify-content: space-between; // Espacement égal entre les éléments
+  align-items: flex-start; // Alignement au début de l'axe transversal
+  text-align: left; // Aligner le texte à gauche
+}
+
+.logement-title {
+  font-size: 24px;
+  color: $color-red; // Utilisez vos variables de couleur
+  margin-bottom: 0.5em;
+}
+
+.logement-location {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.logement-host {
+  display: flex;
+  flex-direction: column; // Organise les éléments en colonne
+  align-items: center; // Centre les éléments horizontalement
+}
+
+.host-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px; // Ajoute un peu d'espace en bas de l'image
+}
+
+.logement-rating {
+  display: flex; // Pour aligner les étoiles horizontalement
+  color: #ff5a5f;
+}
+
+.logement-rating > .empty {
+  color: #ccc;
+}
+
+// Utilisez les médias queries si nécessaire pour ajuster la mise en page sur différents écrans
+@media (min-width: 768px) {
+  .logement-content {
+    flex-direction: row; // Organise les éléments en ligne sur les grands écrans
+    align-items: center; // Centre les éléments horizontalement
+  }
+
+  .logement-location {
+    margin-left: 20px; // Ajoute un peu d'espace à gauche sur les grands écrans
+  }
+}
