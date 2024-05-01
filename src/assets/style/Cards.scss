@@ -4,7 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 5% 3% 5% 3%;
+    margin: 5% 5% 5% 5%;
     padding: 3%;
     background-color: #F6F6F6;
     border-radius: 25px;
@@ -29,7 +29,6 @@
         height: 400px;
         background-size: cover;
         background-position: center;
-        
       }
   
       .card-title {
@@ -52,5 +51,16 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
       }
     }
+}
+
+@media screen and (max-width: 768px) {
+  .cards-container {
+    .card {
+      width: calc(100% - 20px); // Largeur de la carte pour s'adapter à la largeur de l'écran
+
+      .card-image {
+        height: 150px;
+      }
+    }
   }
-  
+}

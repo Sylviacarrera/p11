@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-body, ul {
- margin-bottom: 6%;
-}
-
 body {
   min-height: 100vh;
   display: flex;
@@ -43,7 +39,12 @@ body {
   text-align: center;
 }
 
-.content {
-  flex: 1;
-  padding-bottom: 60px;
+@media screen and (max-width: 768px) {
+  .footer p {
+    font-size: 18px; /* Réduction de la taille de police pour les appareils mobiles */
+    line-height: 24px; /* Réduction de l'interligne */
+    display: block; /* Force le texte à être sur deux lignes */
+    max-width: 60%; /* Limite la largeur pour assurer le saut de ligne */
+    margin: auto; /* Centre le texte horizontalement */
+  }
 }

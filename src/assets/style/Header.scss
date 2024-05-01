@@ -32,3 +32,18 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .banner-logo {
+        width: 130px; /* Taille normale du logo */
+        height: auto;
+    }
+    
+    .banner-nav ul {
+        gap: 20px; /* Réduction de l'espacement entre les éléments de navigation */
+    }
+
+    .banner-nav ul li a {
+        font-size: 15px; /* Taille de police réduite pour les appareils mobiles */
+    }
+}

@@ -1,45 +1,72 @@
 @import 'Variables';
 
 .banner {
-    .banner-slogan {
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-top: 2%;
-        margin-left: 5%;
-        margin-right: 5%;
-        position: relative;
-        border-radius: $border-radius; /* Utilisation de la variable pour le rayon de la bordure */
+  .banner-slogan {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+    border-radius: $border-radiustwo; /* Utilisation de la variable pour le rayon de la bordure */
 
-        &:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: $color-overlay; /* Utilisation de la variable pour la couleur d'arrière-plan avec l'opacité */
-            border-radius: $border-radius; /* Utilisation de la variable pour le rayon de la bordure */
-            z-index: 0;
-        }
-
-        .slogan-background {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 270px;
-            position: relative;
-
-            h1 {
-                color: $color-text-white; /* Utilisation de la variable pour la couleur du texte */
-                padding: 20px;
-                margin: 0;
-                z-index: 1;
-                font-family: $font-family-main; /* Utilisation de la variable pour la police */
-                font-size: 48px;
-                font-weight: 700;
-                line-height: 68.45px;
-                text-align: left;
-            }
-        }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $color-overlay; /* Utilisation de la variable pour la couleur d'arrière-plan avec l'opacité */
+      border-radius: $border-radiustwo; /* Utilisation de la variable pour le rayon de la bordure */
+      z-index: 0;
     }
+
+    .slogan-background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 270px;
+      position: relative;
+
+      h1 {
+        color: $color-text-white; /* Utilisation de la variable pour la couleur du texte */
+        padding: 20px;
+        margin: 0;
+        z-index: 1;
+        font-family: $font-family-main; /* Utilisation de la variable pour la police */
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 68.45px;
+        text-align: left;
+        text-shadow: 
+        -0.5px -0.5px 0 #000,  
+         0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+         0.5px 0.5px 0 #000;
+    
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    .banner-slogan {
+      margin-top: 8%;
+      margin-left: 5%;
+      margin-right: 5%;
+
+      .slogan-background {
+        height: 120px;
+
+        h1 {
+          font-size: 22px;
+          line-height: 1.5;
+          margin-right: 100px;
+          
+        }
+      }
+    }
+  }
 }
