@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import '../style/Dropdown.scss';
 
 const DropdownMenu = ({ options }) => (
@@ -17,7 +15,7 @@ const Tab = ({ title, children, isSelected, toggleTab, dropdownOptions }) => (
   <div className="tab">
     <button onClick={toggleTab} className={`tab-button ${isSelected ? 'active' : ''}`}>
       {title}
-      <FontAwesomeIcon icon={isSelected ? faChevronUp : faChevronDown} className="chevron" />
+      <i className={`chevron fas ${isSelected ? 'fa-chevron-up' : 'fa-chevron-down'}`} />
     </button>
     {isSelected && (
       <div className="tab-content">

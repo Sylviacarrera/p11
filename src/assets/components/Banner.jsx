@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import '../style/Banner.scss';
 
 const Banner = ({ sloganText, backgroundImage, images, showTitle }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const isCarousel = Array.isArray(images) && images.length > 1;
-  
+
   const nextImage = () => {
     if (isCarousel) {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -29,8 +27,8 @@ const Banner = ({ sloganText, backgroundImage, images, showTitle }) => {
     <div className="banner">
       {isCarousel && (
         <div className="carousel-controls">
-          <FontAwesomeIcon icon={faChevronLeft} onClick={prevImage} />
-          <FontAwesomeIcon icon={faChevronRight} onClick={nextImage} />
+          <i className="fas fa-chevron-left" onClick={prevImage}></i>
+          <i className="fas fa-chevron-right" onClick={nextImage}></i>
         </div>
       )}
       <section className="banner-slogan" style={backgroundStyle}>
