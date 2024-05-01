@@ -1,7 +1,7 @@
 .carousel-container {
   position: relative;
   height: 415px;
-  margin: 5% 8%; /* Centrer le carrousel si nécessaire */
+  margin: 5% 5% 0; /* Ajout d'une marge en bas à 0 */
 
   img {
     width: 100%;
@@ -15,7 +15,6 @@
     bottom: 10px; /* Distance du bas de l'image */
     left: 50%; /* Centrage horizontal */
     transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
     padding: 5px 10px; /* Espace autour du texte */
     border-radius: 10px; /* Coins arrondis */
     color: white; /* Couleur du texte */
