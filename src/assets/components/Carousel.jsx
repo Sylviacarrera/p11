@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import '../style/Carousel.scss'; // Assurez-vous d'avoir un fichier CSS pour les styles spécifiques du carrousel
 
 const Carousel = ({ pictures }) => {
@@ -14,19 +12,27 @@ const Carousel = ({ pictures }) => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + pictures.length) % pictures.length);
   };
 
+  const renderCounter = () => {
+    if (pictures.length <= 1) return null;
+    return (
+      <div className="carousel-counter">
+        {currentImageIndex + 1}/{pictures.length}
+      </div>
+    );
+  };
+
   return (
     <div className="carousel-container">
-      <FontAwesomeIcon 
-        icon={faChevronLeft} 
+      <i 
+        className="fas fa-chevron-left carousel-control left" 
         onClick={prevImage} 
-        className="carousel-control left" 
-      />
+      ></i>
       <img src={pictures[currentImageIndex]} alt={`Slide ${currentImageIndex + 1}`} />
-      <FontAwesomeIcon 
-        icon={faChevronRight} 
+      <i 
+        className="fas fa-chevron-right carousel-control right" 
         onClick={nextImage} 
-        className="carousel-control right" 
-      />
+      ></i>
+      {renderCounter()}
     </div>
   );
 };
