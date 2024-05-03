@@ -18,8 +18,10 @@ const Logements = () => {
         tags={logement.tags}
         host={logement.host}
         rating={logement.rating}
+        description={logement.description}
+        equipments={logement.equipments}
       />
-    
+
     </div>
   );
 };

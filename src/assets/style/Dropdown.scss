@@ -1,67 +1,78 @@
-@import 'Variables'; // Importation des variables SCSS
+@import 'Variables'; // Assurez-vous que le chemin d'importation des variables est correct
 
 .tabs-container {
   display: flex;
   flex-direction: column;
+
 }
 
 .tab {
   cursor: pointer;
   border: none;
-  margin-left: 9%;
-  margin-right: 9%;
-  margin-top: 2%;
+  margin: 0 9% ; // Marges latérales ajustées pour 9% à gauche et à droite
 
-
-  .tab-button {
+  button {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 25px;
-    background-color: $color-red; // Utilisation de la variable pour la couleur de fond
     color: white;
     text-align: left;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-radius: 10px;
-    font-family: $font-family-main;
+    border-radius: 5px; // Bordures arrondies pour un look plus doux
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    font-weight: 400;
     line-height: 25.67px;
 
-    &:hover {
-      background-color:$color-red;
-    }
-
-    &:focus {
-      outline: none;
-    }
-
     .chevron {
-      // Assurez-vous que les chevrons sont visibles et correctement alignés
       color: white;
       transition: transform 0.3s ease;
-      font-size: 16px; // Ajustez selon vos besoins
-    }
-  }
+      font-size: 16px;
 
-  &.active .tab-button {
-    background-color:$color-red;
-
-    .chevron {
-      transform: rotate(-180deg);
+      &.active {
+        transform: rotate(-180deg); // Rotation du chevron pour l'état ouvert
+      }
     }
   }
 }
 
 .tab-content {
   display: none;
+  position: absolute;
+  width: 100%; // Assurez-vous que le contenu s'étend sur toute la largeur disponible
+  left: 0;
+  z-index: 1000; // Gardez-le au-dessus d'autres contenus
   &.active {
     display: block;
     padding: 16px;
-    background-color: darken($color-red, 10%);
+    background-color: darken(grey, 5%); // Fond légèrement plus foncé pour le contenu actif
     color: white;
+    border-radius: 5px; // Bordures arrondies pour le contenu
+  }
+}
+
+.dropdown-menu {
+  .tab {
+    button {
+      background-color: $color-red; // Utilisation de la couleur gris pour uniformité
+      margin-top : 20px;
+  
+    }
+  }
+
+  .dropdown-description {
+    padding: 10px;
+    background-color: #eeeeee; // Utilisation d'un gris clair pour la description
+    color: black; // Texte noir pour un contraste élevé
+    font-family: 'Montserrat', sans-serif; // Utilisation de la police Montserrat
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25.67px;
+    text-align: left; // Alignement du texte à gauche
+    margin: 0% 9% ; // Marge réintroduite pour un affichage avec espace
+    box-shadow: none; // Suppression de l'ombre portée
   }
 }
