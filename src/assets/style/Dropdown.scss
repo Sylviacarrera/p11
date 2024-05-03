@@ -9,7 +9,7 @@
 .tab {
   cursor: pointer;
   border: none;
-  margin: 0 9% ; // Marges latérales ajustées pour 9% à gauche et à droite
+  margin: 0 12% ; // Marges latérales ajustées pour 9% à gauche et à droite
 
   button {
     display: flex;
@@ -23,9 +23,12 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     border-radius: 5px; // Bordures arrondies pour un look plus doux
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-family: $font-family-main;
+    font-size: 24px;
+    font-weight: 700;
     line-height: 25.67px;
+    text-align: left;
+    
 
     .chevron {
       color: white;
@@ -58,7 +61,7 @@
   .tab {
     button {
       background-color: $color-red; // Utilisation de la couleur gris pour uniformité
-      margin-top : 20px;
+      margin-top : 10px;
   
     }
   }
@@ -72,7 +75,7 @@
     font-weight: 400;
     line-height: 25.67px;
     text-align: left; // Alignement du texte à gauche
-    margin: 0% 9% ; // Marge réintroduite pour un affichage avec espace
+    margin: 0% 12% ; // Marge réintroduite pour un affichage avec espace
     box-shadow: none; // Suppression de l'ombre portée
   }
 }

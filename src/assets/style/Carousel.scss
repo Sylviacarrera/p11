@@ -1,3 +1,5 @@
+@import 'Variables';
+
 .carousel-container {
   position: relative;
   height: 415px;
@@ -20,6 +22,11 @@
     color: white; /* Couleur du texte */
     font-weight: bold; /* Police en gras */
     font-size: 16px; /* Taille de la police */
+
+    // Styles pour le mode responsive
+    @media screen and (max-width: 768px) {
+      display: none; /* Masquer le compteur d'image en mode responsive */
+    }
   }
 
   .carousel-control {
@@ -49,6 +56,11 @@
 
     &.right {
       right: 20px; /* Moins sur le bord */
+    }
+
+    // Styles pour le mode responsive
+    @media screen and (max-width: 768px) {
+      display: none; /* Masquer les flèches en mode responsive */
     }
   }
 }

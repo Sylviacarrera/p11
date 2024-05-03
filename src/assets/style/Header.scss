@@ -40,7 +40,8 @@
     }
     
     .banner-nav ul {
-        gap: 20px; /* Réduction de l'espacement entre les éléments de navigation */
+        gap: 20px; 
+        text-transform: uppercase; 
     }
 
     .banner-nav ul li a {
