@@ -1,10 +1,14 @@
-// LogementDetails.scss
 @import 'Variables';
 
 .logement-details {
   display: flex;
   align-items: flex-start;
   text-align: left;
+
+  @media (max-width: 768px) {
+    display: block;
+    justify-content: space-between; // Only adjust positioning in mobile view
+  }
 }
 
 .left-column, .right-column {
@@ -14,58 +18,70 @@
 }
 
 .logement-title {
-  font-family:$font-family-main ;
+  font-family: $font-family-main;
   font-size: 36px;
   font-weight: 500;
   line-height: 51.34px;
   text-align: left;
   color: $color-red;
   margin-bottom: 0.2em;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 }
 
 .logement-location {
-  font-family:$font-family-main;
+  font-family: $font-family-main;
   font-size: 18px;
   font-weight: 500;
   line-height: 25.67px;
   margin-bottom: 15px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .logement-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  font-family:$font-family-main ;
+  font-family: $font-family-main;
   font-size: 14px;
   font-weight: 700;
   text-align: center;
-
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 }
 
 .tag {
   padding: 8px 10px;
-  border-radius: 5px;
-  border-radius: 15px; // Augmente le rayon de bordure pour plus d'arrondi
-  background-color: $color-red; // Utilisez votre variable de couleur pour le fond
-  color: $color-footer-text; // Choisissez une couleur de texte appropriée pour assurer le contraste
-  font-weight: bold; // Optionnel: Rendre le texte en gras
-  margin-right: 20px; // Ajoutez de la marge à droite si vous voulez espacer les tags
-  margin-bottom: 10px; // Ajoutez de la marge en bas pour l'espacement entre les lignes de tags
-  border: 1px solid $color-red; // Si vous souhaitez avoir une bordure en plus du fond
+  border-radius: 15px;
+  background-color: $color-red;
+  color: $color-footer-text;
+  font-weight: bold;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border: 1px solid $color-red;
 }
 
 .logement-host {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .host-name {
-  margin-right: 10px;
   font-family: $font-family-main;
   font-size: 18px;
   font-weight: 500;
   line-height: 25.67px;
-  color: $color-red; 
+  color: $color-red;
+  margin-right: 10px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 .host-image {
@@ -73,24 +89,46 @@
   height: 64px;
   border-radius: 50%;
   margin-bottom: 10px;
+  @media (max-width: 768px) {
+    width: 32px;
+  height: 32px;
+  }
 }
 
 .logement-rating {
   display: flex;
   color: #ff5a5f;
   font-size: 23px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .logement-rating .empty {
   color: #ccc;
 }
 
-  .left-column {
-    flex-grow: 2;
+.left-column {
+  flex-grow: 2;
+}
+
+.right-column {
+  flex-grow: 1;
+  align-items: flex-end;
+
+  @media (max-width: 768px) {
+    flex-direction: initial;
+    justify-content: space-between; // Only adjust positioning in mobile view
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .logement-rating {
+    order: -1; // Ensures ratings appear on the left side in mobile view
   }
 
-  .right-column {
-    flex-grow: 1;
-    align-items: flex-end;
+  .logement-host {
+    justify-content: flex-start; // Ensures host details appear on the right in mobile view
   }
-
+}
