@@ -21,11 +21,13 @@ const LogementDetails = ({ title, location, tags, host, rating, description, equ
         <div className="logement-rating">
           <Rating data={rating} />
         </div>
-        <div>
-        </div>
-        </div>
-          <Dropdown item={{ title: 'Description', description: description }} />
+        <div className="dropdown-container">
+        <Dropdown item={{ title: 'Description', description: description }} />
           <Dropdown item={{ title: 'Equipements', description: equipments }} />
+
+        </div>
+        </div>
+ 
     </div>
   );
 };
