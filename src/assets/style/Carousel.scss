@@ -3,64 +3,63 @@
 .carousel-container {
   position: relative;
   height: 415px;
-  margin: 5% 5% 0; /* Ajout d'une marge en bas à 0 */
+  margin: 5% 5% 0;
 
   img {
     width: 100%;
-    height: 100%; /* Ajuster la hauteur de l'image */
+    height: 100%;
     object-fit: cover;
     border-radius: 20px;
   }
 
   .carousel-counter {
     position: absolute;
-    bottom: 10px; /* Distance du bas de l'image */
-    left: 50%; /* Centrage horizontal */
-    transform: translateX(-50%);
-    padding: 5px 10px; /* Espace autour du texte */
-    border-radius: 10px; /* Coins arrondis */
-    color: white; /* Couleur du texte */
-    font-weight: bold; /* Police en gras */
-    font-size: 16px; /* Taille de la police */
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-100%);
+    padding: 5px 10px; 
+    border-radius: 10px;
+    color: $color-white;  
+    font-size: 25px; 
+    font-family: $font-family-main;
 
     // Styles pour le mode responsive
     @media screen and (max-width: 768px) {
-      display: none; /* Masquer le compteur d'image en mode responsive */
+      display: none;
     }
   }
 
   .carousel-control {
     position: absolute;
-    top: calc(50% + 30px); /* Déplacer légèrement les flèches vers le bas */
-    transform: translateY(-50%);
+    top: calc(50% + 30px); 
+    transform: translateY(-100%);
     cursor: pointer;
-    color: white;
+    color: $color-white;
     border-radius: 50%;
-    width: 50px; /* Taille des flèches */
-    height: 50px; /* Taille des flèches */
+    width: 50px; 
+    height: 50px; 
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s;
-
-    font-size: 30px; /* Taille de l'icône plus grande */
+    font-size: 80px;
 
     &:hover {
       transform: scale(1.2) translateY(-50%);
-      background: rgba(255, 255, 255, 0.7); /* Fond plus sombre au survol */
+      background: rgba(255, 255, 255, 0.7); 
     }
 
     &.left {
-      left: 20px; /* Moins sur le bord */
+      left: 30px;
     }
 
     &.right {
-      right: 20px; /* Moins sur le bord */
+      right: 30px; 
     }
 
     // Styles pour le mode responsive
     @media screen and (max-width: 768px) {
-      display: none; /* Masquer les flèches en mode responsive */
+      display: none; 
     }
   }
 }

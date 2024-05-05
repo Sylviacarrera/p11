@@ -10,18 +10,18 @@
     border-radius: 25px;
     
     .card {
-      border-radius: 8px; // Bords arrondis pour les cartes
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Ombre pour la profondeur
-      margin: 10px; // Espace autour des cartes pour éviter qu'elles se touchent
-      width: calc(33.333% - 20px); // Soustraction due au margin pour 3 cartes par ligne
-      overflow: hidden; // Pour s'assurer que tout le contenu reste à l'intérieur des bords arrondis
-      cursor: pointer; // Indique que la carte est cliquable
-      transition: transform 0.3s ease, box-shadow 0.3s ease; // Transition pour l'animation au survol
+      border-radius: 8px; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 10px; 
+      width: calc(33.333% - 20px); 
+      overflow: hidden; 
+      cursor: pointer; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
       position: relative;
       
       &:hover {
-        transform: translateY(-5px); // Déplacement léger vers le haut lors du survol
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); // Ombre plus prononcée au survol
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
       }
   
       .card-image {
@@ -32,21 +32,21 @@
       }
   
       .card-title {
-        color: white; // Couleur du texte
+        color: $color-white; 
         position: absolute;
-        bottom: 10px; // Ajustez en fonction de l'espace souhaité du bas de l'image
-        left: 10px; // Ajustez en fonction de l'espace souhaité du côté gauche
-        padding: 0; // Retirez le padding si vous ne voulez pas de l'espace autour du texte
-        margin: 0; // Assurez-vous qu'il n'y a pas de marge par défaut
-        color: $color-text-white; // Utilisez la variable de couleur définie dans vos variables SCSS
-        background-color: transparent; // Retirez l'arrière-plan ou ajustez si nécessaire
-        font-family: $font-family-main; // Utilisez la variable de police définie dans vos variables SCSS
+        bottom: 10px; 
+        left: 10px; 
+        padding: 0; 
+        margin: 0; 
+        color: $color-text-white; 
+        background-color: transparent; 
+        font-family: $font-family-main; 
         font-size: 18px;
         font-weight: 700;
         line-height: 25.67px;
         text-align: left;
-        width: auto; // Permettez au titre de prendre la largeur du contenu
-        overflow: visible; // Assurez-vous que le texte ne soit pas coupé
+        width: auto; 
+        overflow: visible; 
         z-index: 1;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
       }
@@ -56,7 +56,7 @@
 @media screen and (max-width: 768px) {
   .cards-container {
     .card {
-      width: calc(100% - 20px); // Largeur de la carte pour s'adapter à la largeur de l'écran
+      width: calc(100% - 20px);
 
       .card-image {
         height: 150px;

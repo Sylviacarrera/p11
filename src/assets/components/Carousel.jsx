@@ -23,15 +23,19 @@ const Carousel = ({ pictures }) => {
 
   return (
     <div className="carousel-container">
-      <i 
-        className="fas fa-chevron-left carousel-control left" 
-        onClick={prevImage} 
-      ></i>
+      {pictures.length > 1 && (
+        <i 
+          className="fas fa-chevron-left carousel-control left" 
+          onClick={prevImage} 
+        ></i>
+      )}
       <img src={pictures[currentImageIndex]} alt={`Slide ${currentImageIndex + 1}`} />
-      <i 
-        className="fas fa-chevron-right carousel-control right" 
-        onClick={nextImage} 
-      ></i>
+      {pictures.length > 1 && (
+        <i 
+          className="fas fa-chevron-right carousel-control right" 
+          onClick={nextImage} 
+        ></i>
+      )}
       {renderCounter()}
     </div>
   );

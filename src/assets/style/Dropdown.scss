@@ -11,6 +11,9 @@
   border: none;
   margin: 0 12% ; // Marges latérales ajustées pour 9% à gauche et à droite
 
+  @media (max-width: 768px) {
+    margin: 0 6%; // Réduire la marge pour les petits écrans
+  }
   button {
     display: flex;
     justify-content: space-between;
@@ -33,10 +36,17 @@
     .chevron {
       color: white;
       transition: transform 0.3s ease;
-      font-size: 16px;
+      font-size: 30px;
 
       &.active {
         transform: rotate(-180deg); // Rotation du chevron pour l'état ouvert
+      }
+    }
+    @media (max-width: 768px) {
+      padding: 15px;
+      font-size: 18px; // Réduire la taille de la police pour les petits écrans
+      .chevron {
+        font-size: 20px; // Adapter la taille du chevron
       }
     }
   }
@@ -61,7 +71,7 @@
   .tab {
     button {
       background-color: $color-red; // Utilisation de la couleur gris pour uniformité
-      margin-top : 10px;
+      margin-top : 40px;
   
     }
   }
@@ -69,13 +79,18 @@
   .dropdown-description {
     padding: 10px;
     background-color: #eeeeee; // Utilisation d'un gris clair pour la description
-    color: black; // Texte noir pour un contraste élevé
-    font-family: 'Montserrat', sans-serif; // Utilisation de la police Montserrat
+    color: $color-footer-background; // Texte noir pour un contraste élevé
+    font-family: $font-family-main; // Utilisation de la police Montserrat
     font-size: 18px;
     font-weight: 400;
-    line-height: 25.67px;
     text-align: left; // Alignement du texte à gauche
     margin: 0% 12% ; // Marge réintroduite pour un affichage avec espace
-    box-shadow: none; // Suppression de l'ombre portée
+    line-height:25.67px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      margin: 0 6%; ;
+
+    }
   }
 }
