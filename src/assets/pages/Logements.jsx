@@ -3,10 +3,15 @@ import { useParams } from 'react-router-dom';
 import data from '../data/logements.json';
 import Carousel from '../components/Carousel';
 import LogementDetails from '../components/Presentation'; // Assurez-vous que le chemin d'accès est correct
+import NotFoundPage from './Notfoundpage';
 
 const Logements = () => {
   const { id } = useParams();
   const logement = data.find((item) => item.id === id);
+
+  if (!logement) {
+    return <NotFoundPage />
+  }
 
   return (
     <div className="logement-wrapper"> {/* Conteneur avec marges */}

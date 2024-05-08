@@ -16,18 +16,20 @@ const LogementDetails = ({ title, location, tags, host, rating, description, equ
       <div className="right-column">
         <div className="logement-host">
           <span className="host-name">{host.name}</span>
-          <img className="host-image" src={host.picture} alt={`Hôte : ${host.name}`} />
+          <img className="host-image" src={host.picture} alt={`HÃ´te : ${host.name}`} />
         </div>
         <div className="logement-rating">
           <Rating data={rating} />
         </div>
-        <div className="dropdown-container">
-        <Dropdown item={{ title: 'Description', description: description }} />
-          <Dropdown item={{ title: 'Equipements', description: equipments }} />
 
-        </div>
-        </div>
- 
+      </div>
+
+      <div className="dropdown-container">
+        <Dropdown item={{ title: 'Description', description: description }} />
+        <Dropdown item={{ title: 'Equipements', description: equipments }} />
+
+      </div>
+
     </div>
   );
 };

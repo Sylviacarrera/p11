@@ -4,14 +4,36 @@
   display: flex;
   align-items: flex-start;
   text-align: left;
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
     display: block;
     justify-content: space-between; // Only adjust positioning in mobile view
   }
+
+  .dropdown-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0% 5%;
+
+    .dropdown-menu {
+      width: 45%;
+
+      .tab {
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
 }
 
-.left-column, .right-column {
+.left-column,
+.right-column {
   display: flex;
   flex-direction: column;
   margin: 3% 5%;
@@ -37,6 +59,7 @@
   font-weight: 500;
   line-height: 25.67px;
   margin-bottom: 15px;
+
   @media (max-width: 768px) {
     font-size: 14px;
   }
@@ -50,6 +73,7 @@
   font-size: 14px;
   font-weight: 700;
   text-align: center;
+
   @media (max-width: 768px) {
     font-size: 10px;
   }
@@ -79,6 +103,7 @@
   line-height: 25.67px;
   color: $color-red;
   margin-right: 10px;
+
   @media (max-width: 768px) {
     font-size: 12px;
   }
@@ -89,9 +114,10 @@
   height: 64px;
   border-radius: 50%;
   margin-bottom: 10px;
+
   @media (max-width: 768px) {
     width: 32px;
-  height: 32px;
+    height: 32px;
   }
 }
 
@@ -99,6 +125,7 @@
   display: flex;
   color: #ff5a5f;
   font-size: 23px;
+
   @media (max-width: 768px) {
     font-size: 14px;
   }
@@ -130,5 +157,18 @@
 
   .logement-host {
     justify-content: flex-start; // Ensures host details appear on the right in mobile view
+  }
+
+  .logement-details {
+
+    .dropdown-container {
+      flex-direction: column;
+      width: 90%;
+
+      .dropdown-menu {
+        width: 100%;
+      }
+    }
+
   }
 }
