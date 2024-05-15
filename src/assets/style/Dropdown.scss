@@ -62,14 +62,14 @@
     display: block;
     padding: 16px;
     background-color: darken(grey, 5%); 
-    border-radius: 5px;
-  }
+    border-radius: 5px; 
 }
-
+}
 .dropdown-menu {
   .tab {
     button {
       background-color: $color-red; 
+      margin-top : 40px;
   
     }
   }
@@ -77,7 +77,7 @@
   .dropdown-description {
     padding: 10px;
     background-color: #eeeeee; 
-    color: $color-footer-background; 
+    color: $color-footer-background;
     font-family: $font-family-main; 
     font-size: 18px;
     font-weight: 400;
