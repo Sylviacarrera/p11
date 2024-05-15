@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import data from '../data/logements.json';
 import Carousel from '../components/Carousel';
-import LogementDetails from '../components/Presentation'; // Assurez-vous que le chemin d'accès est correct
+import LogementDetails from '../components/Presentation';
 import NotFoundPage from './Notfoundpage';
 
 const Logements = () => {
@@ -14,9 +14,9 @@ const Logements = () => {
   }
 
   return (
-    <div className="logement-wrapper"> {/* Conteneur avec marges */}
+    <div className="logement-wrapper"> 
       <Carousel pictures={logement.pictures} />
-      {/* Utilisation du composant LogementDetails pour afficher les détails */}
+
       <LogementDetails
         title={logement.title}
         location={logement.location}

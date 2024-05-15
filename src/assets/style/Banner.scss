@@ -8,8 +8,7 @@
     margin-left: 5%;
     margin-right: 5%;
     position: relative;
-    border-radius: $border-radiustwo; /* Utilisation de la variable pour le rayon de la bordure */
-
+    border-radius: $border-radiustwo; 
     &:before {
       content: '';
       position: absolute;
@@ -17,8 +16,8 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: $color-overlay; /* Utilisation de la variable pour la couleur d'arrière-plan avec l'opacité */
-      border-radius: $border-radiustwo; /* Utilisation de la variable pour le rayon de la bordure */
+      background: $color-overlay; 
+      border-radius: $border-radiustwo; 
       z-index: 0;
     }
 
@@ -30,11 +29,11 @@
       position: relative;
 
       h1 {
-        color: $color-text-white; /* Utilisation de la variable pour la couleur du texte */
+        color: $color-text-white; 
         padding: 20px;
         margin: 0;
         z-index: 1;
-        font-family: $font-family-main; /* Utilisation de la variable pour la police */
+        font-family: $font-family-main;
         font-size: 48px;
         font-weight: 700;
         line-height: 68.45px;

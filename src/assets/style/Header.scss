@@ -35,7 +35,7 @@
 
 @media screen and (max-width: 768px) {
     .banner-logo {
-        width: 130px; /* Taille normale du logo */
+        width: 130px;
         height: auto;
     }
     
@@ -45,6 +45,6 @@
     }
 
     .banner-nav ul li a {
-        font-size: 13px; /* Taille de police réduite pour les appareils mobiles */
+        font-size: 13px;
     }
 }

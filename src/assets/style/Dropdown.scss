@@ -1,4 +1,4 @@
-@import 'Variables'; // Assurez-vous que le chemin d'importation des variables est correct
+@import 'Variables'; 
 
 .tabs-container {
   display: flex;
@@ -9,10 +9,10 @@
 .tab {
   cursor: pointer;
   border: none;
-  margin: 0 12% ; // Marges latérales ajustées pour 9% à gauche et à droite
+  margin: 0 12% ; 
 
   @media (max-width: 768px) {
-    margin: 0 6%; // Réduire la marge pour les petits écrans
+    margin: 0 6%; 
   }
   button {
     display: flex;
@@ -25,7 +25,7 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-radius: 5px; // Bordures arrondies pour un look plus doux
+    border-radius: 5px; 
     font-family: $font-family-main;
     font-size: 24px;
     font-weight: 700;
@@ -39,14 +39,14 @@
       font-size: 30px;
 
       &.active {
-        transform: rotate(-180deg); // Rotation du chevron pour l'état ouvert
+        transform: rotate(-180deg); 
       }
     }
     @media (max-width: 768px) {
       padding: 15px;
-      font-size: 18px; // Réduire la taille de la police pour les petits écrans
+      font-size: 18px; 
       .chevron {
-        font-size: 20px; // Adapter la taille du chevron
+        font-size: 20px; 
       }
     }
   }
@@ -55,36 +55,34 @@
 .tab-content {
   display: none;
   position: absolute;
-  width: 100%; // Assurez-vous que le contenu s'étend sur toute la largeur disponible
+  width: 100%; 
   left: 0;
-  z-index: 1000; // Gardez-le au-dessus d'autres contenus
+  z-index: 1000; 
   &.active {
     display: block;
     padding: 16px;
-    background-color: darken(grey, 5%); // Fond légèrement plus foncé pour le contenu actif
-    color: white;
-    border-radius: 5px; // Bordures arrondies pour le contenu
+    background-color: darken(grey, 5%); 
+    border-radius: 5px;
   }
 }
 
 .dropdown-menu {
   .tab {
     button {
-      background-color: $color-red; // Utilisation de la couleur gris pour uniformité
-      margin-top : 40px;
+      background-color: $color-red; 
   
     }
   }
 
   .dropdown-description {
     padding: 10px;
-    background-color: #eeeeee; // Utilisation d'un gris clair pour la description
-    color: $color-footer-background; // Texte noir pour un contraste élevé
-    font-family: $font-family-main; // Utilisation de la police Montserrat
+    background-color: #eeeeee; 
+    color: $color-footer-background; 
+    font-family: $font-family-main; 
     font-size: 18px;
     font-weight: 400;
-    text-align: left; // Alignement du texte à gauche
-    margin: 0% 12% ; // Marge réintroduite pour un affichage avec espace
+    text-align: left; 
+    margin: 0% 12% ; 
     line-height:25.67px;
 
     @media (max-width: 768px) {

@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from '../components/Banner';
 import Dropdown from '../components/Dropdown';
 
-import aboutBackgroundImage from '../img/imgbackground2.png'; // Importez votre image de fond
+import aboutBackgroundImage from '../img/imgbackground2.png'; 
 
 const data = [
   {
